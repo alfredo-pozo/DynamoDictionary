@@ -1,20 +1,21 @@
 # DynamoDictionary
 
-Dynamo Dictionary development repo
-
 Live version here: http://dictionary.dynamobim.com
 
 ## Installation
 
-- Install [Node.js version 12](https://nodejs.org) installer (or use [nvm](https://github.com/nvm-sh/nvm).)
+- Node.js version 12 is required. [Download the installer here](https://nodejs.org) (or use [nvm](https://github.com/nvm-sh/nvm).)
 - Run `npm install` from the command line in the project root directory.
 
 ## Run the Development Server
-- Run `npm run start` from the command line in the project root directory.
+- Run `npm start` from the command line in the project root directory.
+- A browser window with the development site at http://localhost:3000 should open automatically. It may take a few seconds for the site to appear the first time.
 
 ## Build the Static Deployment 
 
 - Run `npm run build` from the command line in the project root directory.
+- To test serving the static files locally, run `npx serve -s build`. 
+- Open the local static site at http://localhost:5000.
 
 ## Deploying
 

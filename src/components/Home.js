@@ -6,9 +6,9 @@ function Home(props){
         <h1 className='raleway'>The Dynamo Dictionary</h1>
         <hr/>
         <p className="graytextlg" style={{"color":"lightgray"}}>Welcome to the Dynamo Dictionary, a searchable database for Dynamo functionality. Here you can find explanations for nodes, sample files, and links to more information on associated workflows. This site is constantly evolving as the community continues to add more information. Like the 
-          <a href="http://dynamoprimer.com/" target="_blank" rel="noopener noreferrer" style={{'color':'orangered'}}>Dynamo Primer</a>, 
+          <a href="http://dynamoprimer.com/" target="_blank" rel="noopener noreferrer" style={{'color':'orangered'}}> Dynamo Primer</a>, 
           this dictionary is open-source - check it out on our 
-          <a href="https://github.com/DynamoDS/DynamoDictionary" target="_blank" rel="noopener noreferrer" style={{'color':'orangered'}} >Github page</a> 
+          <a href="https://github.com/DynamoDS/DynamoDictionary" target="_blank" rel="noopener noreferrer" style={{'color':'orangered'}} > Github page </a> 
           and contribute!</p>
         <hr />
         <br/>

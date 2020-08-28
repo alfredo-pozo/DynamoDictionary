@@ -25,11 +25,11 @@ function Header(props){
             <img src="images/src/icon.png" width="80%" id='dynamologo' alt="dynamoIcon" target="_blank" rel="noopener noreferrer" style={{"verticalAlign":"middle", "marginLeft":"0px", "marginTop":"-2px"}} />
             </a>
             <Link to='/' className='raleway' style={{'color':'white'}}>&nbsp; Dynamo Dictionary</Link>
-            <a href='http://dictionary.dynamobim.com/' className='raleway' style={{'color':'orangered'}}>&nbsp; 1.x</a>
-            <a href='http://dictionary.dynamobim.com/2' className='raleway' style={{'color':'orangered'}}>&nbsp; 2.x</a>
+            <a href='http://staging-dictionary.dynamobim.com/' className='raleway' style={{'color':'orangered'}}>&nbsp; 1.x</a>
+            <a href='http://staging-dictionary.dynamobim.com/2' className='raleway' style={{'color':'orangered'}}>&nbsp; 2.x</a>
             </span>
         </div>
-        <div  className='graytext'  style={{'position':'absolute', 'right':'0', 'top':'0','paddingRight':'10px'}}>
+        {/* <div  className='graytext'  style={{'position':'absolute', 'right':'0', 'top':'0','paddingRight':'10px'}}>
           {props.phase==='committing' ? <a href={props.link} target="_blank" rel="noopener noreferrer">
             <FlatButton label={'github'} labelPosition="after"
               labelStyle={{color:'white', fontWeight:100, fontFamily:"'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif", fontSize:12}}
@@ -48,7 +48,7 @@ function Header(props){
           />
 
 
-    </div>
+    </div> */}
   </div>
 
   )

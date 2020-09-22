@@ -30,6 +30,7 @@ try
 
    $indexPath = "$WorkspacePath\build\index.html"
 
+   #Replacing static path to the 2 root folder
    (Get-Content -Path $indexPath) | ForEach-Object {$_ -Replace '/static/', '/2/static/'} | Set-Content -Path $indexPath
 }
 catch

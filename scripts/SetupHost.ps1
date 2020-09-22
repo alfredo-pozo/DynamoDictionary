@@ -4,7 +4,7 @@
 $ErrorActionPreference = "Stop"
 
 #Getting directory names to install the tools
-$nugetDir = "$env:WORKSPACE\DockerUtilities\Tools\Nuget"
+$nugetDir = "$env:WORKSPACE\cicd\Tools\Nuget"
 $elementsPath = ($env:WORKSPACE -split "\\")
 
 $toolsDir = $elementsPath[0] + '\' + $elementsPath[1] + '\tools'

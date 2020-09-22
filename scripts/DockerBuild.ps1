@@ -6,7 +6,7 @@ $ErrorActionPreference = "Stop"
 
 try
 {
-	docker exec $env:DOCKER_CONTAINER pwsh -command "$env:DOCKER_WORKSPACE\$env:COMMON_RESOURCES_DIR\scripts\Build.ps1"
+	docker exec $env:DOCKER_CONTAINER pwsh -command "$env:DOCKER_WORKSPACE\$env:COMMON_RESOURCES_DIR\scripts\Build.ps1 -WorkspacePath $env:DOCKER_WORKSPACE"
 	
 	if($LASTEXITCODE -ne 0)
 	{

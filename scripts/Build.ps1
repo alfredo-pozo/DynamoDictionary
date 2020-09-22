@@ -27,6 +27,10 @@ try
    {
       throw "Build Failed"
    }
+
+   $indexPath = "$WorkspacePath\build\index.html"
+
+   (Get-Content -Path $indexPath) | ForEach-Object {$_ -Replace '/static/', '/2/static/'} | Set-Content -Path $indexPath
 }
 catch
 {

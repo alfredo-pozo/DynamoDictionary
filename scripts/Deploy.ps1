@@ -1,12 +1,14 @@
 <#
-   Date: 29/11/2019
+   Date: 22/09/2020
    Purpose: Run the deploy commands inside container.
 #>
 param(
-   [string[]]$ArrayParameter=@(), 
-   $bucketName, 
-   $distributionID, 
-   $PrimerRoot
+   [String]  
+   $BucketName,
+   [String]
+   $DistributionID,
+   [String]
+   $ContentRoot
 )
 
 $ErrorActionPreference = "Stop"
@@ -82,30 +84,18 @@ try {
    #AWS variables
    $AWSRegion = "us-east-1"
    $AWSBucketName = $bucketName
+   $s3folder = "2"
 
    #Set credentials
    Set-AWSCredential -AccessKey $jsonToken.data.access_key -SecretKey $jsonToken.data.secret_key -SessionToken $jsonToken.data.security_token
 
-   Foreach ($language in $ArrayParameter)
-   {
-      #Remove languge folder.
-      Write-Host "Removing '$language' old content ..."
-      RemoveS3Folder -s3Prefix "$language"
-      #Get all files and upload
-      Write-Host "Uploading '$language' new content ..."
-      UploadS3Folder -localFolderLocation "$PrimerRoot\$language\_book" -s3Prefix "$language"
+   #Remove old content
+   Write-Host "Removing old content ..."
+   RemoveS3Folder -s3Prefix $s3folder -filter $null
 
-      if($language -eq "en"){
-         $filter = {($_.Key -NotLike "en/*" -and $_.Key -NotLike "de/*" -and $_.Key -NotLike "ja/*" -and $_.Key -NotLike "zh-tw/*")}
-         Write-Host "Updating root content folders"
-         #Remove folders.
-         Write-Host "Removing old root content..."
-         RemoveS3Folder -s3Prefix $null -filter $filter
-         #Get all files and upload
-         Write-Host "Uploading root content..."
-         UploadS3Folder -localFolderLocation "$PrimerRoot\$language\_book" -s3Prefix $null
-      }
-   }
+   #Get all files and upload
+   Write-Host "Uploading new content ..."
+   UploadS3Folder -localFolderLocation "$ContentRoot" -s3Prefix $s3folder
 
    #Invalidating current CDN content to refresh it
    $invalidationLong = [long](Get-Date -Format "yyyddMMHHmm")

@@ -1,12 +1,12 @@
 <#
-   Date: 29/11/2019
+   Date: 22/09/2020
    Purpose: Deploy Script of DynamoDictionary
 #>
 $ErrorActionPreference = "Stop"
 
 try
 {	
-	docker exec $env:DOCKER_CONTAINER pwsh -command "$env:DOCKER_WORKSPACE\$env:COMMON_RESOURCES_DIR\scripts\DockerDeployCommands.ps1 -a $env:ENVIRONMENT_LANGUAGE $env:BUCKETNAME $env:DISTRIBUTIONID $env:DOCKER_WORKSPACE"
+	docker exec $env:DOCKER_CONTAINER pwsh -command "$env:DOCKER_WORKSPACE\$env:COMMON_RESOURCES_DIR\scripts\Deploy.ps1 -BucketName $env:BUCKETNAME -DistributionID $env:DISTRIBUTIONID -ContentRoot $env:DOCKER_WORKSPACE\build"
 
 	if($LASTEXITCODE -ne 0)
 	{

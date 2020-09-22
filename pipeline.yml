@@ -10,7 +10,7 @@ env:
   - DOCKER_WORKSPACE : "C:\\Workspace"
   - COMMON_RESOURCES_DIR : "cicdresources"
   - DOCKER_CONTAINER : "build-dictionary"
-  - URL_REPO_TOOLS : "https://github.com/alfredo-pozo/DynamoDictionary.git"
+  - URL_REPO_TOOLS : "https://github.com/DynamoDS/DynamoDictionary.git"
   - BRANCH_TOOLS : "cicdresources"
 
 timeout: 420

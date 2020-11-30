@@ -12,7 +12,10 @@ $ErrorActionPreference = "Stop"
 
 try
 {
-   Set-Location $workspacePath
+   #Copy npmrc with ADSK registry
+   Copy-Item -Path $env:USERPROFILE\.npmrc -Destination $WorkspacePath -Force
+
+   Set-Location $WorkspacePath
 
    npm install
 
